@@ -34,7 +34,7 @@ export const getCompanyInfoFromUrl = async (url: string): Promise<string> => {
 
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-3-1-flash-lite-preview",
       contents: prompt,
       config: {
         tools: [{ googleSearch: {} }],
@@ -82,7 +82,7 @@ export const generateDesignConcepts = async (
 
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview", 
+      model: "gemini-3-1-flash-lite-preview", 
       contents: {
         parts: [
           { inlineData: { mimeType: "image/png", data: screenshotBase64 } },
@@ -139,7 +139,7 @@ export const generateMockupImage = async (
   const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
   // Use the specific model requested for high quality image generation
-  const model = "gemini-3-pro-image-preview";
+  const model = "gemini-3.1-flash-image-preview";
 
   let specificPrompt = concept.imagePrompt;
   let aspectRatio = "9:16";
@@ -234,7 +234,7 @@ export const refineAndRegenerateMockup = async (
 
     try {
         const textResponse = await ai.models.generateContent({
-            model: "gemini-3-flash-preview",
+            model: "gemini-3-1-flash-lite-preview",
             contents: orchestratorPrompt
         });
         if (textResponse.text) {

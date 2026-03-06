@@ -124,7 +124,7 @@ designgenius/
 - **No Database Required**: Images are generated as base64 data URLs and stored in browser memory
 - **Session-Based**: Generated images are lost on page refresh (download them immediately)
 - **API Costs**: Gemini API usage is billed per request - monitor your usage at [Google AI Studio](https://ai.google.dev/)
-- **Image Models**: Uses `gemini-3-pro-image-preview` for high-quality image generation
+- **Image Models**: Uses `gemini-3.1-flash-image-preview` (Nano Banana 2) for high-quality image generation
 
 ## License
 
